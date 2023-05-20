@@ -5,11 +5,13 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth scroll;
 }
 :root{
     --text-color: #000000;
     --text-ligter: #404660;
     --bg-color: #6990F2;
+    --btn-color: #1f44a3;
 }
 body {
     overflow-x: hidden;
@@ -234,3 +236,46 @@ section .details span{
 /* Hello */
 /* Testing */
 
+/* Next Page Button */
+.next-page-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.btn{
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all .6s;
+
+}
+/* Next Page Button */
+
+/*Chart*/
+
+#myChart2 {
+  max-width: 500px;
+  max-height: 500px;
+  margin-left: 50px;
+}
+
+#myChart3 {
+  max-width: 1000px;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+#myChart {
+  max-width: 1000px;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+.data-chart {
+  display: flex;
+}
