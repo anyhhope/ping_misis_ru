@@ -3,10 +3,27 @@
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-header{
+}
+:root{
+    --text-color: #000000;
+    --text-ligter: #404660;
+}
+body {
+    overflow: hidden;
+    color: var(--text-color);
+}
+.body-wrapper {
+    display: table;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Header */
+header {
     display: block;
 }
+
 .header {
     position: relative;
     z-index: 11;
@@ -14,64 +31,78 @@ header{
     left: 0;
     width: 100%;
     background: #003174;
-  }
+}
+
 .header-wrap {
     position: relative;
     display: flex;
     align-items: center;
     height: 5rem;
     justify-content: space-between;
-  }
-  .header-logo {
+}
+
+.header-logo {
     margin-right: 2rem;
-  }
-  .header-logo:last-child {
+}
+
+.header-logo:last-child {
     margin-right: 0;
-  }
-  .header-logo__col {
+}
+
+.header-logo__col {
     display: flex;
     align-items: center;
-  }
-  @media (max-width: 46rem) {
+}
+
+@media (max-width: 46rem) {
     .header-wrap {
-      height: 4rem;
+        height: 4rem;
     }
+
     .header-logo:first-child svg {
-      width: 5rem;
+        width: 5rem;
     }
+
     .header-logo:last-child svg {
-      width: 2.5rem;
+        width: 2.5rem;
     }
-  }
+}
 
-  #csv {
+/* Header */
+
+#csv {
     margin-top: 200px;
-  }
+}
 
-  table {
+table {
     border-collapse: collapse;
     border: 2px black solid;
     font: 12px sans-serif;
-    }
-    td {
+}
+
+td {
     border: 1px black solid;
     padding: 5px;
-    }
-  .body-wrapper{
-    display: table;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
-  .dropzone {
+}
+
+/* Dropzone */
+.dropzone {
     width: 200px;
     height: 200px;
-    border: 2px dashed black;
+    border: 2px dashed rgb(115, 165, 231);
     text-align: center;
-    padding-top: 80px;
+    padding-top: 40px;
     margin-top: 20px;
-  }
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
 
-  body {
-    overflow: hidden;
-  }
+.download-img img {
+    width: 90px;
+}
+.droptext{
+    font-weight: 300;
+    color: var(--text-ligter);
+}
+/* DropZone */
