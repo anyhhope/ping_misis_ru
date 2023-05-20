@@ -8,7 +8,7 @@ header{
     display: block;
 }
 .header {
-    position: fixed;
+    position: relative;
     z-index: 11;
     top: 0;
     left: 0;
@@ -42,4 +42,18 @@ header{
     .header-logo:last-child svg {
       width: 2.5rem;
     }
+  }
+  .body-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .dropzone {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed black;
+    text-align: center;
+    padding-top: 80px;
+    margin-top: 20px;
   }
