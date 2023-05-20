@@ -10,7 +10,6 @@
     --text-color: #000000;
     --text-ligter: #404660;
     --bg-color: #6990F2;
-
 }
 body {
     overflow-x: hidden;
@@ -49,6 +48,7 @@ header {
 .header-logo {
     margin-right: 2rem;
 }
+
 .header-logo svg{
   margin-left: 10px;
 }
@@ -79,6 +79,7 @@ header {
 
 /* Header */
 
+/* Table */
 table {
     border-collapse: collapse;
     border: 2px black solid;
@@ -119,25 +120,29 @@ td {
   tr:hover td {
     background-color: #e2e6ea;
   }
+  .for-table{
+    margin-top: 20px;
+  }
+/* Table */
 
 /* DropZone */
 ::selection{
   color: #fff;
   background: var(--bg-color);
 }
-.dropzone-wrapper{
-    margin-top: 20px;
-  width: 430px;
-  background: #fff;
-  border-radius: 5px;
-  padding: 30px;
-  box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
-}
 .dropzone-wrapper header{
   color: #6990F2;
   font-size: 27px;
   font-weight: 600;
   text-align: center;
+}
+.dropzone{
+    margin-top: 20px;
+    width: 430px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
 }
 .dropzone-wrapper form{
   height: 167px;
