@@ -19,6 +19,7 @@
     "browserslist": "^4.21.5",
     "buffer-from": "^1.1.2",
     "caniuse-lite": "^1.0.30001488",
+    "chart.js": "^4.3.0",
     "chrome-trace-event": "^1.0.3",
     "commander": "^2.20.3",
     "electron-to-chromium": "^1.4.402",
@@ -78,5 +79,5 @@
   "homepage": "https://github.com/anyhhope/ping_misis_ru#readme",
   "browser": {
     "fs": false
-}
+  }
 }

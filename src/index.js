@@ -1,3 +1,3 @@
 import './style.css';
-import './js/ping.js'
-import './js/logic.js';
+import './js/forfile.js'
+import './js/forchart.js';
