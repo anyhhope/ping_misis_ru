@@ -1,11 +1,32 @@
 const path = require('path'); // Импортируем модуль "path" для работы с путями файлов
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const pages = [
+  {
+    filename: 'index.html',
+    template: './src/index.html',
+    chunks: ['index']
+  },
+  {
+    filename: 'dash.html',
+    template: './src/dash.html',
+    chunks: ['dash']
+  },
+  {
+    filename: 'cluster.html',
+    template: './src/cluster.html',
+    chunks: ['cluster']
+  }
+];
 module.exports = {
-  entry: './src/index.js', // Точка входа для сборки проекта
+  entry: {
+    index: './src/index.js',
+    dash: './src/dash.js',
+    cluster: './src/cluster.js'
+  },
+  // Точка входа для сборки проекта
 
   output: {
-    filename: 'bundle.js', // Имя выходного файла сборки
+    filename: '[name].bundle.js', // Имя выходного файла сборки
     path: path.resolve(__dirname, 'start'), // Путь для выходного файла сборки
   },
 
@@ -19,9 +40,11 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
+    ...pages.map(page => new HtmlWebpackPlugin({
+      filename: page.filename,
+      template: page.template,
+      chunks: page.chunks
+    }))
   ],
 
   devServer: {
