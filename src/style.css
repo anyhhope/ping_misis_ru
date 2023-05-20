@@ -58,7 +58,7 @@ header{
     padding: 5px;
     }
   .body-wrapper{
-    display: flex;
+    display: table;
     justify-content: center;
     align-items: center;
     margin: auto;
