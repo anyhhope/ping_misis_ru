@@ -43,3 +43,17 @@ header{
       width: 2.5rem;
     }
   }
+
+  #csv {
+    margin-top: 200px;
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 2px black solid;
+    font: 12px sans-serif;
+    }
+    td {
+    border: 1px black solid;
+    padding: 5px;
+    }

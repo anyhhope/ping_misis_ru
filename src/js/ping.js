@@ -1,35 +1,39 @@
-console.log('HEllo')
+const fileInput = document.getElementById('csv')
+// const readFile = () => {
+//   const reader = new FileReader()
+//   reader.onload = () => {
+//     document.getElementById('out').innerHTML = reader.result
+//     console.log(typeof document.getElementById('out').innerHTML)
+//   }
+//   // start reading the file. When it is done, calls the onload event defined above.
+//   reader.readAsBinaryString(fileInput.files[0])
+// }
 
-function Upload() {
-    var fileUpload = document.querySelector(".fileUpload");
-    var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
-    if (regex.test(fileUpload.value.toLowerCase())) {
-        if (typeof (FileReader) != "undefined") {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                var table = document.createElement("table");
-                var rows = e.target.result.split("\n");
-                for (var i = 0; i < rows.length; i++) {
-                    var cells = rows[i].split(",");
-                    if (cells.length > 1) {
-                        var row = table.insertRow(-1);
-                        for (var j = 0; j < cells.length; j++) {
-                            var cell = row.insertCell(-1);
-                            cell.innerHTML = cells[j];
-                        }
-                    }
-                }
-                var dvCSV = document.getElementById("dvCSV");
-                dvCSV.innerHTML = "";
-                dvCSV.appendChild(table);
-            }
-            reader.readAsText(fileUpload.files[0]);
-        } else {
-            alert("This browser does not support HTML5.");
-        }
-    } else {
-        alert("Please upload a valid CSV file.");
+const readFile = () => {
+    const reader = new FileReader()
+    reader.onload = () => {
+        document.getElementById('out').innerHTML = reader.result
+        console.log(typeof document.getElementById('out').innerHTML)
     }
+    reader.readAsText(fileInput.files[0], 'UTF-8');
+    // start reading the file with a specific encoding. When it is done, calls the onload event defined above.
 }
 
-Upload()
+var div = document.getElementById('container');
+var data = 'heading1,heading2,heading3,heading4,heading5\nvalue1_1,value2_1,value3_1,value4_1,value5_1\nvalue1_2,value2_2,value3_2,value4_2,value5_2';
+var lines = data.split("\n"), output = [], i;
+
+/* HEADERS */
+output.push("<tr><th>"
+    + lines[0].slice().split(",").join("</th><th>")
+    + "</th></tr>");
+
+for (i = 1; i < lines.length; i++)
+    output.push("<tr><td>"
+        + lines[i].slice().split(",").join("</td><td>")
+        + "</td></tr>");
+
+output = "<table><tbody>"
+    + output.join("") + "</tbody></table>";
+
+div.innerHTML = output;

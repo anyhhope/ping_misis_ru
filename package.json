@@ -31,6 +31,7 @@
     "events": "^3.3.0",
     "fast-deep-equal": "^3.1.3",
     "fast-json-stable-stringify": "^2.1.0",
+    "fs": "^0.0.1-security",
     "glob-to-regexp": "^0.4.1",
     "graceful-fs": "^4.2.11",
     "has-flag": "^4.0.0",
@@ -74,5 +75,8 @@
   "bugs": {
     "url": "https://github.com/anyhhope/ping_misis_ru/issues"
   },
-  "homepage": "https://github.com/anyhhope/ping_misis_ru#readme"
+  "homepage": "https://github.com/anyhhope/ping_misis_ru#readme",
+  "browser": {
+    "fs": false
+}
 }
