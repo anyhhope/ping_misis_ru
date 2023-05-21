@@ -1,54 +1,18 @@
 import Chart from 'chart.js/auto'
-
-const ctx2 = document.getElementById('myChart2'); //pie
-
-const pie = { //man/woman
-    labels: [ //need
-        'Мужчины',
-        'Женщины'
-    ],
-    datasets: [{
-        label: 'My First Dataset',
-        data: [555, 115], //need
-        backgroundColor: [
-            'rgb(54, 162, 235)',
-            'rgb(255, 99, 132)'
-        ],
-        hoverOffset: 4
-    }]
-};
-
-function make_pie(cnv, pie){
-    let pie_chart = new Chart(cnv, {
-        type: 'doughnut',
-        data: pie,
-    });
-}
-
-make_pie(ctx2, pie)
-
-
-
-// document.getElementById("myChart2").onclick = function (evt) {
-//     const points = pie_chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
-
-//     if (points.length) {
-//         const firstPoint = points[0];
-//         const label = pie_chart.data.labels[firstPoint.index];
-//         const value = pie_chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
-//         let h = 0;
-//     }
-// }
+const axios = require('axios');
 
 const ctx = document.getElementById('myChart');
-
-const data_bar = { //для колва людей в категотирии
-    labels: ['Red', 'Blue', 'dfgbh', 'Green', 'dfvg', 'Orange'], //need
+let data_bar = {
+    labels: ['Управление жизненным циклом', 'Инженерное проектирование', 'Вывод из эксплуатации объектов использования атомной энергии', 'Управление качеством', 'Сетевое и системное администрирование', 'Программные решения для бизнеса', 'Инженерное мышление. Каракури', 'Цифровое ПСР-Предприятие (Lean Smart Plant)', 'Мехатроника', 'Охрана труда', 'Промышленная механика и монтаж', 'Аналитический контроль', 'Информационная безопасность', 'Инженер-конструктор', 'Сварочные технологии', 'Электроника', 'Охрана окружающей среды', 'Технологии композитов', 'Строительный контроль', 'Корпоративная защита от внутренних угроз информационной безопасности', 'Электромонтаж', 'Бетонные строительные работы', 'Радиационный контроль', 'Водитель спецавтомобиля', 'Неразрушающий контроль', 'Сметное дело', 'Квантовые технологии', 'Геодезия', 'Машинное обучение и большие данные', 'Технологические системы энергетических объектов', 'Промышленная автоматика', 'Инженер-технолог машиностроения', 'Изготовление прототипов', 'Токарные работы на станках с ЧПУ', 'Обслуживание и ремонт оборудования релейной защиты и автоматики', 'Аддитивные технологии', 'Фрезерные работы на станках с ЧПУ', 'Работы на токарных универсальных станках', 'Работы на фрезерных универсальных станках'], //need
     datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 1234, 23, 2, 3], //need
+        backgroundColor: [
+            'rgb(255, 99, 132)'
+        ],
+
+        label: 'Участников: ',
+        data: [63, 47, 32, 28, 28, 27, 24, 24, 22, 22, 20, 20, 20, 20, 20, 19, 18, 16, 16, 16, 16, 15, 15, 15, 14, 14, 13, 12, 12, 10, 10, 9, 9, 8, 8, 7, 7, 7, 7], //need
         borderWidth: 1
-    }]
+    }],
 }
 
 
@@ -65,18 +29,48 @@ function make_bar(ctx, data_bar){
         }
     });
 }
-
 make_bar(ctx, data_bar);
 
+// axios.get('http://46.138.243.191:54002/data_bar').then(response => {
+//   data_bar = response.data;
+//   make_bar(ctx, data_bar); 
+// }).catch(error => {
+//   console.log(error.message);
+// });
 
+// PIE
+const ctx2 = document.getElementById('myChart2'); 
 
-// document.getElementById("myChart3").onclick = function (evt) {
-//     const points = scatter_chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+let pie = { //man/woman
+    labels: [ //need
+        'Мужчины',
+        'Женщины'
+    ],
+    datasets: [{
+        label: 'Количество',
+        data: [555, 115], 
+        backgroundColor: [
+            'rgb(54, 162, 235)',
+            'rgb(255, 99, 132)'
+        ],
+        hoverOffset: 4
+    }]
+};
 
-//     if (points.length) {
-//         const firstPoint = points[0];
-//         const label = scatter_chart.data.labels[firstPoint.index];
-//         const value = scatter_chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
-//         let h = 0;
-//     }
-// }
+// let pie;
+function make_pie(ctx2, pie){
+    let pie_chart = new Chart(ctx2, {
+        type: 'doughnut',
+        data: pie,
+    });
+}
+make_pie(ctx2, pie);
+
+// axios.get('http://46.138.243.191:54002/pie').then(response => {
+// //   console.log(response.data);
+//   pie = response.data;
+//   make_pie(ctx2, pie); 
+// }).catch(error => {
+//   console.log(error.message);
+// });
+
