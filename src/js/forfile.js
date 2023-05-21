@@ -52,10 +52,10 @@ const readFile = () => {
 fileInput.addEventListener('change', readFile)
 
 // 
-
+let tablle = document.querySelector('.for-table')
 function uploadFile(name) {
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "php/upload.php");
+  xhr.open("POST", "http://46.138.243.191:54002/upload");
   xhr.upload.addEventListener("progress", ({ loaded, total }) => {
     let fileLoaded = Math.floor((loaded / total) * 100);
     let fileTotal = Math.floor(total / 1000);
@@ -88,9 +88,11 @@ function uploadFile(name) {
                             <i class="fas fa-check"></i>
                           </li>`;
       uploadedArea.classList.remove("onprogress");
+      tablle.classList.add("active");
       uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML);
     }
   });
   let data = new FormData(form);
   xhr.send(data);
 }
+

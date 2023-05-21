@@ -12,6 +12,7 @@
     --text-ligter: #404660;
     --bg-color: #6990F2;
     --btn-color: #1f44a3;
+    --text-light: rgb(193, 218, 255);
 }
 body {
     overflow-x: hidden;
@@ -81,6 +82,12 @@ header {
 /* Header */
 
 /* Table */
+.for-table.hid{
+    overflow-x: hidden;
+}
+.for-table.active{
+    overflow-x: scroll;
+}
 table {
     border-collapse: collapse;
     border: 2px black solid;
@@ -252,32 +259,38 @@ section .details span{
     border: 1px solid;
     cursor: pointer;
     transition: all .6s;
-
 }
 /* Next Page Button */
 
 /*Chart*/
-
-#myChart2 {
-  max-width: 500px;
-  max-height: 500px;
-  margin-left: 50px;
+.chart-wrapper{
+    padding: 20px 20px;
 }
-
-.data-cluster {
-  max-width: 1000px;
-  max-height: 500px;
-  margin: 0 auto;
+.layout-2-col{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-between;
+    grid-gap: 40px;
+}
+.chart-title{
+    font-weight: 600;
+    color: white;
 }
 
 #myChart {
-  max-width: 1000px;
-  max-height: 500px;
-  margin: 0 auto;
-}
+    max-width: 500px;
+    max-height: 300px;
+    margin: 0 auto;
+  }
 
-.data-chart {
-  display: flex;
-}
-
-/*dfghj*/
+#myChart2 {
+    max-width: 350px;
+    max-height: 300px;
+    margin-left: 50px;
+  }
+  
+  #myChart3 {
+    max-width: 1000px;
+    max-height: 500px;
+    margin: 0 auto;
+  }
