@@ -264,7 +264,7 @@ section .details span{
   margin-left: 50px;
 }
 
-#myChart3 {
+.data-cluster {
   max-width: 1000px;
   max-height: 500px;
   margin: 0 auto;
@@ -279,3 +279,5 @@ section .details span{
 .data-chart {
   display: flex;
 }
+
+/*dfghj*/
