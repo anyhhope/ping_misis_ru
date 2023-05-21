@@ -1,61 +1,82 @@
 import Chart from 'chart.js/auto'
 
-const ctx2 = document.getElementById('myChart2');
+const ctx2 = document.getElementById('myChart2'); //pie
 
-const pie = {
-    labels: [
-        'Red',
-        'Blue',
-        'Yellow'
+const pie = { //man/woman
+    labels: [ //need
+        'Мужчины',
+        'Женщины'
     ],
     datasets: [{
         label: 'My First Dataset',
-        data: [300, 50, 100],
+        data: [555, 115], //need
         backgroundColor: [
-            'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
+            'rgb(255, 99, 132)'
         ],
         hoverOffset: 4
     }]
 };
 
-new Chart(ctx2, {
-    type: 'doughnut',
-    data: pie,
-});
+function make_pie(cnv, pie){
+    let pie_chart = new Chart(cnv, {
+        type: 'doughnut',
+        data: pie,
+    });
+}
+
+make_pie(ctx2, pie)
+
+
+
+// document.getElementById("myChart2").onclick = function (evt) {
+//     const points = pie_chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+//     if (points.length) {
+//         const firstPoint = points[0];
+//         const label = pie_chart.data.labels[firstPoint.index];
+//         const value = pie_chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+//         let h = 0;
+//     }
+// }
 
 const ctx = document.getElementById('myChart');
 
-const data_bar = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+const data_bar = { //для колва людей в категотирии
+    labels: ['Red', 'Blue', 'dfgbh', 'Green', 'dfvg', 'Orange'], //need
     datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 19, 1234, 23, 2, 3], //need
         borderWidth: 1
     }]
 }
 
-new Chart(ctx, {
-    type: 'bar',
-    data: data_bar,
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+
+function make_bar(ctx, data_bar){
+    let bar_char = new Chart(ctx, {
+        type: 'bar',
+        data: data_bar,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
-});
+    });
+}
 
-// const axios = require('axios');
-// axios.get('http://46.138.243.191:54002/data_bar').then(response => {
-//   // console.log(response.data.datasets[0].data);
-//   bar_resp = response.data.datasets[0].data;
-//   make_bar(bar_resp);
-//   // console.log(response.data);
-//   // console.log(response.data.labels);
-// }).catch(error => {
-//   console.log(error.message);
-// });
+make_bar(ctx, data_bar);
 
+
+
+// document.getElementById("myChart3").onclick = function (evt) {
+//     const points = scatter_chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+//     if (points.length) {
+//         const firstPoint = points[0];
+//         const label = scatter_chart.data.labels[firstPoint.index];
+//         const value = scatter_chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+//         let h = 0;
+//     }
+// }

@@ -256,3 +256,26 @@ section .details span{
 }
 /* Next Page Button */
 
+/*Chart*/
+
+#myChart2 {
+  max-width: 500px;
+  max-height: 500px;
+  margin-left: 50px;
+}
+
+#myChart3 {
+  max-width: 1000px;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+#myChart {
+  max-width: 1000px;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+.data-chart {
+  display: flex;
+}

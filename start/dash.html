@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3626/3626489.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-</head>
+<script defer src="dash.bundle.js"></script></head>
 
 <body>
   <header class="header">
@@ -119,31 +119,3 @@
   </header>
 
   </header>
-
-  <div class="container">
-    <div class="body-wrapper">
-
-      <div class="dropzone-wrapper">
-        <div class="dropzone">
-            <header>Upload Your .CSV Files</header>
-            <form action="#">
-              <input class="file-input" type="file" name="file" accept=".csv" hidden>
-              <i class="fas fa-cloud-upload-alt"></i>
-              <p>Browse File to Upload</p>
-            </form>
-            <section class="progress-area"></section>
-            <section class="uploaded-area"></section>
-        </div>
-      </div>
-    </div>
-  <div class="next-page-wrap">
-    <button class="btn" onclick="window.location.href='/dash.html'" >See Graphs</button>
-  </div>
-  <div class="next-page-wrap">
-    <button class="btn" onclick="window.location.href='/cluster.html'" >See Clusterisation</button>
-  </div>
-  <div class="for-table"></div>
-</div>
-</body>
-
-</html>
